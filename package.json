@@ -1,0 +1,31 @@
+{
+    "name": "smartcomments",
+    "version": "0.1.0",
+    "description": "SmartComments, Automatic generation comments, from your Javascript code",
+    "author": "Dariel N. Vila <darielnoel@gmail.com>",
+    "engines": {
+        "node" : ">=0.9.0"
+    },
+    "keywords": [
+        "generator",
+        "comments",
+        "documentation",
+        "yuidocs",
+        "docs",
+        "automatic"
+    ],
+    "bin" : { "smartcomments" : "./bin/index.js" },
+    "dependencies": {
+        "esprima": ">=1.0.4",
+        "eswalker": ">=0.1.2",
+        "fs-extra": ">=0.6.4"
+    },
+    "devDependencies": {
+    },
+    "preferGlobal": "true",
+    "license" : "BSD",
+    "repository": {
+        "type":"git",
+        "url":"https://github.com/smartcomments/smartcomments.git"
+    }
+}
