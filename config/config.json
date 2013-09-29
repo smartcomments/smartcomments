@@ -1,6 +1,6 @@
 {
    "target_dir": [""],	
-   "match_files": ["^((?!/~).)*.(js)$"],
+   "match_files": ["^((?!~).)*.(js)$"],
    "backup" : true,
    "tags": {
         "function":{
