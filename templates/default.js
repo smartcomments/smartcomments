@@ -86,7 +86,7 @@ var DefaultTemplate = {
                 }
 
                 //return statement
-                if (available_options.params) {
+                if (available_options.rtrn) {
                     var body_elements = node.body.body;
 
                     if (body_elements) {
