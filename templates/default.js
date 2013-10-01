@@ -4,11 +4,23 @@ var DefaultTemplate = {
         DefaultTemplate.config = config;
     },
 
+    walkFunctions: function(){
+        var walkFunctions = [
+            {name: 'enterFunctionExpression'},
+            {name: 'enterFunctionDeclaration'},
+            {name: 'enterVariableDeclaration'}
+        ];
+
+        //If you want to use a personalized function you can add func attr
+        //{name:'enterFunctionExpression', func: my_function}
+        return walkFunctions;
+    },
+
     executeWalk: function(walkname, params) {
         var instance = DefaultTemplate,
             tags;
 
-        //para cada tag ejecuta el walkname
+        //For every tag 
         Object.keys(instance.tags).forEach(function(item, index) {
             if (instance.tags[item][walkname] && instance.config.tags[item]) {
                 instance.tags[item][walkname](params);
@@ -188,5 +200,6 @@ module.exports = {
     executeWalk: DefaultTemplate.executeWalk,
     initialize: DefaultTemplate.initialize,
     getCommentsList: DefaultTemplate.getCommentsList,
-    setCommentsList: DefaultTemplate.setCommentsList
+    setCommentsList: DefaultTemplate.setCommentsList,
+    walkFunctions: DefaultTemplate.walkFunctions
 };
