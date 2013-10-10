@@ -1,5 +1,5 @@
-SmartComments: Smart Comments for idlers men.
----------------------------------------------
+SmartComments
+-------------
 
 SmartComments, It's a tool that allow you to create implicit comments from javascript source code. You can integrate it with javascript documentation generators like [YUIDocs](http://yuilibrary.com/yui/docs).
 
