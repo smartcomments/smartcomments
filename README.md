@@ -1,4 +1,22 @@
 SmartComments: Smart Comments for idlers men.
-=============================================
+---------------------------------------------
 
-SmartComments it's a node.js application that allow to generate comments from your javascript code.
+SmartComments, It's a tool that allow you to create implicit comments from javascript source code. You can integrate it with javascript documentation generators like [YUIDocs](http://yuilibrary.com/yui/docs).
+
+
+install
+=======
+
+    npm install -g smartcomments
+    
+
+usage
+=====
+
+    smartcomments --generate
+
+
+documentation
+=============
+
+[Documentation and examples can be found here](http://smartcomments.github.io/)
