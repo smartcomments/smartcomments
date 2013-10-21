@@ -1,7 +1,7 @@
 {
     "name": "smartcomments",
     "version": "0.1.0",
-    "description": "SmartComments, Automatic generation comments, from your Javascript code",
+    "description": "SmartComments, It's a tool that allow you to create implicit comments from javascript source code. You can integrate it with javascript documentation generators like YUIDocs.",
     "author": "Dariel N. Vila <darielnoel@gmail.com>",
     "engines": {
         "node" : ">=0.9.0"
