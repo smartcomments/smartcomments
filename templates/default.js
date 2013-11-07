@@ -143,6 +143,19 @@ var MyTemplate = {
                         comment_data.node = params.node;
                         instance.buildComment(comment_data);
                     }
+                    else if(parent.type === 'AssignmentExpression') {
+                        
+                        if(parent.right.type === 'FunctionExpression') {
+                            
+                            if(parent.right.id.name){
+                                comment_data.name = parent.right.id.name;
+                            }
+                            
+                            comment_data.pos  = parent.left.range[0];
+                            comment_data.node = parent.right;
+                            instance.buildComment(comment_data);
+                        }
+                    }
                 },
 
                 /**
