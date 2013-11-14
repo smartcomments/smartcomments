@@ -147,8 +147,8 @@ var MyTemplate = {
                         
                         if(parent.right.type === 'FunctionExpression') {
                             
-                            if(parent.right.id.name){
-                                comment_data.name = parent.right.id.name;
+                            if (parent.left.property && parent.left.property.name) {
+                                comment_data.name = parent.left.property.name;
                             }
                             
                             comment_data.pos  = parent.left.range[0];
