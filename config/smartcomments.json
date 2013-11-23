@@ -1,0 +1,14 @@
+{
+   "target_dir": [""],	
+   "match_files": ["^((?!~).)*.(js)$"],
+   "backup" : true,
+   "tags": {
+        "function":{
+          "name":{},
+          "desc":{"value":"Description"},
+          "params":{},
+          "rtrn":{}
+        }
+	},
+	"template" : "../templates/default.js"
+}
