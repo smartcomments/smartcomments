@@ -1,7 +1,7 @@
 {
    "target_dir": [""],	
    "match_files": ["^((?!~).)*.(js)$"],
-   "backup" : true,
+   "backup" : false,
    "tags": {
         "function":{
           "name":{},
