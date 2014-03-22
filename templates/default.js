@@ -46,79 +46,84 @@ var MyTemplate = {
                         params = [],
                         default_value = 'My function Description';
 
-                    //Description statement
-                    if (available_options.desc) {
-                        if (available_options.desc.value) {
-                            default_value = available_options.desc.value;
+                    if (typeof(config.private) === 'undefined'
+                        || config.private
+                        || !/^_/.test(method_name)) {
+
+                        //Description statement
+                        if (available_options.desc) {
+                            if (available_options.desc.value) {
+                                default_value = available_options.desc.value;
+                            }
+
+                            comment.tags.push({
+                                name: '',
+                                value: default_value
+                            });
                         }
 
-                        comment.tags.push({
-                            name: '',
-                            value: default_value
-                        });
-                    }
-
-                    //@method statement
-                    if (method_name && available_options.name) {
-                        comment.tags.push({
-                            name: '@method',
-                            value: method_name
-                        });
-                    }
-
-                    //@param statement
-                    if (available_options.params) {
-                        var array = node.params,
-                            size = array.length,
-                            i = 0,
-                            value;
-                        for (i; i < size; i++) {
-                            params.push({
-                                name: array[i].name,
-                                type: array[i].type
-                            });
-                            value = '{} ' + array[i].name;
+                        //@method statement
+                        if (method_name && available_options.name) {
                             comment.tags.push({
-                                name: '@param',
-                                value: value
+                                name: '@method',
+                                value: method_name
                             });
-                        };
-                    }
+                        }
 
-                    //@return statement
-                    if (available_options.rtrn) {
-                        var body_elements = node.body.body;
-
-                        if (body_elements) {
-                            var size = body_elements.length,
-                                value = '';
-                            i = 0;
-                            for (var i = 0; i < size; i++) {
-                                if (body_elements[i].type === 'ReturnStatement') {
-                                    if (body_elements[i].argument) {
-                                        if (body_elements[i].argument.name) {
-                                            value = body_elements[i].argument.name;
-                                        } else {
-                                            value = body_elements[i].argument.type;
-                                        }
-
-                                    }
-                                }
+                        //@param statement
+                        if (available_options.params) {
+                            var array = node.params,
+                                size = array.length,
+                                i = 0,
+                                value;
+                            for (i; i < size; i++) {
+                                params.push({
+                                    name: array[i].name,
+                                    type: array[i].type
+                                });
+                                value = '{} ' + array[i].name;
+                                comment.tags.push({
+                                    name: '@param',
+                                    value: value
+                                });
                             };
-
-                            comment.tags.push({
-                                name: '@return',
-                                value: value
-                            });
                         }
 
-                    }
+                        //@return statement
+                        if (available_options.rtrn) {
+                            var body_elements = node.body.body;
+
+                            if (body_elements) {
+                                var size = body_elements.length,
+                                    value = '';
+                                i = 0;
+                                for (var i = 0; i < size; i++) {
+                                    if (body_elements[i].type === 'ReturnStatement') {
+                                        if (body_elements[i].argument) {
+                                            if (body_elements[i].argument.name) {
+                                                value = body_elements[i].argument.name;
+                                            } else {
+                                                value = body_elements[i].argument.type;
+                                            }
+
+                                        }
+                                    }
+                                };
+
+                                comment.tags.push({
+                                    name: '@return',
+                                    value: value
+                                });
+                            }
+
+                        }
 
 
 
-                    if (comment.pos >= 0) {
-                        //Add comment to comment_list
-                        instance.comments_list.push(comment);
+                        if (comment.pos >= 0) {
+                            //Add comment to comment_list
+                            instance.comments_list.push(comment);
+                        }
                     }
                 },
 

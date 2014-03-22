@@ -2,6 +2,7 @@
    "target_dir": [""],	
    "match_files": ["^((?!~).)*.(js)$"],
    "backup" : false,
+   "private" : false,
    "tags": {
         "function":{
           "name":{},
