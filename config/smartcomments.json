@@ -2,6 +2,8 @@
    "target_dir": [""],	
    "match_files": ["^((?!~).)*.(js)$"],
    "backup" : false,
+   "private" : false,
+   "favor_generated" : true,
    "tags": {
         "function":{
           "name":{},
